@@ -65,14 +65,13 @@ class BootstrapCarouselBlockController extends BlockController {
         $db = Loader::db();
         $q = "DELETE FROM btBootstrapCarouselSlides WHERE bID = ?;";
         $r = $db->execute($q, $this->bID);
-        
-        for($i = 0; $i < count($data['imageID']); $i++) {            
-            $q = "INSERT INTO btBootstrapCarouselSlides SET bID = ?, imageID = ?, content = ?, position = ?, link = ?;";
-            $r = $db->execute($q, array($this->bID, $data['imageID'][$i], $data['content'][$i], $i, $data['link'][$i]));            
-        }
-        
+
         parent::save($data);
-        
+
+        for($i = 0; $i < count($data['imageID']); $i++) {
+            $q = "INSERT INTO btBootstrapCarouselSlides SET bID = ?, imageID = ?, content = ?, position = ?, link = ?;";
+            $r = $db->execute($q, array($this->bID, $data['imageID'][$i], $data['content'][$i], $i, $data['link'][$i]));
+        }
     }
 
     
