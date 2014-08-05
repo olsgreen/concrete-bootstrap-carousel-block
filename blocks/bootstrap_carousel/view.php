@@ -18,7 +18,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
 <div id="bootstrap-carousel-<?php echo $bID; ?>" class="carousel slide"<?php echo ($width > 0 || $height > 0) ? ' style="width: ' . $width . 'px; height: ' . $height . 'px; overflow: hidden;"' : ''; ?>>
     <ol class="carousel-indicators">
         <?php for($i = 0; $i < count($slides); $i++) { ?>
-        <li data-target="#bootstrap-carousel-<?php echo $bID; ?>" data-slide-to="<?php echo $i; ?>"<?php echo ($i == 0) ? ' class="active"' : ''; ?></l>></li>
+        <li data-target="#bootstrap-carousel-<?php echo $bID; ?>" data-slide-to="<?php echo $i; ?>"<?php echo ($i == 0) ? ' class="active"' : ''; ?>></li>
         <?php } ?>
     </ol>
     <!-- Carousel items -->
