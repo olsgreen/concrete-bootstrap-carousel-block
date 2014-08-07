@@ -65,7 +65,9 @@ $slides = $this->controller->getSlides();
                 <?php foreach($slides as $slide) { ?>
                 <li>
                     <span class="img" style="background-image: url(<?php echo $slide['image']->getThumbnailSRC(1); ?>);"></span><span class="title"><?php echo $slide['image']->getFileName(); ?></span>
-                    <input name="imageID[]" value="<?php echo $slide['imageID']; ?>" type="hidden"><input name="content[]" value="<?php echo htmlentities($slide['content'],ENT_HTML5|ENT_COMPAT, "UTF-8"); ?>" type="hidden">
+                    <input name="imageID[]" value="<?php echo $slide['imageID']; ?>" type="hidden">
+                    <input name="mobileImageID[]" value="<?php echo $slide['mobileImageID']; ?>" type="hidden">
+                    <input name="content[]" value="<?php echo htmlentities($slide['content'],ENT_HTML5|ENT_COMPAT, "UTF-8"); ?>" type="hidden">
                     <input name="link[]" value="<?php echo $slide['link']; ?>" type="hidden">
                     <a href="javascript:void(0)" class="btn btn-mini slideEditButton">Edit</a>
                     <a href="javascript:void(0)" class="btn btn-mini btn-danger slideDeleteButton">Delete</a>

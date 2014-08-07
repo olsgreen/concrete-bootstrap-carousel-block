@@ -57,6 +57,9 @@
   display: block;
   line-height: 1;
 }
+.carousel-inner > .item > img.mobile-img {
+  display: none;
+}
 .carousel-inner > .active,
 .carousel-inner > .next,
 .carousel-inner > .prev {
@@ -160,4 +163,18 @@
 }
 .carousel-caption p {
   margin-bottom: 0;
+}
+
+
+/*
+| Responsive Tweeks
+*/
+@media screen and (max-width: 767px) {
+  .carousel-inner > .item > img.desktop-img {
+    display: none;
+  }
+
+  .carousel-inner > .item > img.mobile-img {
+    display: block;
+  }
 }

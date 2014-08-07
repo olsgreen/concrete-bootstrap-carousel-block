@@ -25,7 +25,14 @@ defined('C5_EXECUTE') or die("Access Denied.");
     <div class="carousel-inner">
         <?php $first = true; foreach($slides as $slide) { ?>
         <div class="item<?php echo ($first) ? ' active' : ''; ?>">
-            <?php if($slide['link']) { ?><a href="http://<?php echo $slide['link']; ?>"><?php } ?><img src="<?php echo $slide['image']->getURL(); ?>" alt="<?php echo $slide['image']->getFileName(); ?>"><?php if($slide['link']) { ?></a><?php } ?>
+            <?php if($slide['link']) { ?><a href="http://<?php echo $slide['link']; ?>"><?php } ?>
+                <img src="<?php echo $slide['image']->getURL(); ?>" alt="<?php echo $slide['image']->getFileName(); ?>" class="desktop-img">
+                <?php if($slide['mobileImage']->getFileName()) { ?>
+                <img src="<?php echo $slide['mobileImage']->getURL(); ?>" alt="<?php echo $slide['mobileImage']->getFileName(); ?>" class="mobile-img">
+                <?php } else { ?>
+                <img src="<?php echo $slide['image']->getURL(); ?>" alt="<?php echo $slide['image']->getFileName(); ?>" class="mobile-img">
+                <?php } ?>
+            <?php if($slide['link']) { ?></a><?php } ?>
             <?php if($slide['content']) { ?>
             <div class="carousel-caption">
                 <?php echo $slide['content']; ?>

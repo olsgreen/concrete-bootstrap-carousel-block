@@ -28,6 +28,9 @@ print '
         <label for="imageID">Slide Image:</label>
         ' . $al->image('eimageID', 'eimageID', 'Choose image', (intval($data['imageID']) > 0) ? File::getByID($data['imageID']) : null) . '
         <br>
+        <label for="mobileImageID">Mobile Slide Image:ud' . $data['mobileImageID'] . '</label>
+        ' . $al->image('emobileImageID', 'emobileImageID', 'Choose image', (intval($data['mobileImageID']) > 0) ? File::getByID($data['mobileImageID']) : null) . '
+        <br>
         <div class="input-prepend input-append">
             <label for="link">Image Link:</label>
             <span class="add-on">http://</span>

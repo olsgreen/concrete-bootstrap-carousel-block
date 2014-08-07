@@ -49,6 +49,7 @@ class BootstrapCarouselBlockController extends BlockController {
             
             while($row = $r->fetchRow()) {
                 $row['image'] = File::getByID($row['imageID'])->getApprovedVersion();
+                $row['mobileImage'] = File::getByID($row['mobileImageID'])->getApprovedVersion();
                 $slides[] = $row;
             }
         }
@@ -69,8 +70,8 @@ class BootstrapCarouselBlockController extends BlockController {
         parent::save($data);
 
         for($i = 0; $i < count($data['imageID']); $i++) {
-            $q = "INSERT INTO btBootstrapCarouselSlides SET bID = ?, imageID = ?, content = ?, position = ?, link = ?;";
-            $r = $db->execute($q, array($this->bID, $data['imageID'][$i], $data['content'][$i], $i, $data['link'][$i]));
+            $q = "INSERT INTO btBootstrapCarouselSlides SET bID = ?, imageID = ?, mobileImageID = ?, content = ?, position = ?, link = ?;";
+            $r = $db->execute($q, array($this->bID, $data['imageID'][$i], $data['mobileImageID'][$i], $data['content'][$i], $i, $data['link'][$i]));
         }
     }
 

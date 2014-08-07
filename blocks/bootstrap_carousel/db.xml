@@ -36,6 +36,9 @@
         <field name="imageID" type="I">
 			<unsigned />
 		</field>
+		<field name="mobileImageID" type="I">
+			<unsigned />
+		</field>
 		<field name="content" type="X2">
 		</field>
         <field name="position" type="I">
