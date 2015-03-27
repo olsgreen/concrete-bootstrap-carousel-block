@@ -14,7 +14,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
 
 class BootstrapCarouselPackage extends Package
 {
-	protected $pkgHandle = 'concrete5_bootstrap_carousel';
+	protected $pkgHandle = 'bootstrap_carousel';
     protected $appVersionRequired = '5.6';
     protected $pkgVersion = '0.2';
 
