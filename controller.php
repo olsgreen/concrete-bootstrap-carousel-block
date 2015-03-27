@@ -16,7 +16,7 @@ class BootstrapCarouselPackage extends Package
 {
 	protected $pkgHandle = 'bootstrap_carousel';
     protected $appVersionRequired = '5.6';
-    protected $pkgVersion = '0.2';
+    protected $pkgVersion = '0.21';
 
     public function getPackageDescription() {
     	return t("Package containing Boostrap's (@twbootstrap) famed carousel for Conctrete5.");
